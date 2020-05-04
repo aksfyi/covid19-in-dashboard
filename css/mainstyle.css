@@ -1,0 +1,60 @@
+html
+{
+    scroll-behavior: smooth;
+}
+::placeholder
+{
+    color: rgb(120, 217, 241);
+}
+
+body{
+
+    font-family: 'Poppins', sans-serif;
+      }
+.card{
+    border-radius: 10px;;
+}
+.maincase
+{
+    margin-top: 2%;;
+}
+.slick-slide
+{
+    outline: none;
+}
+.slider
+{
+    margin:1%
+}
+.slick-prev:before,
+.slick-next:before {
+  color: orangered;
+}
+
+.partnews{
+    margin-top: 2%;
+    padding: 2%;
+    border-radius: 10px;
+}
+.statedata{
+    margin-top: 2%;
+    padding: 2%;
+    border-radius: 10px;
+}
+.loader
+        {
+          background-color: #f5f5f5;
+          width: 100%;
+          top:0;
+          left: 0;
+          height: 100%;
+          z-index: 9999;
+          position: fixed;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+.card-title
+{
+    font-size: large;
+}

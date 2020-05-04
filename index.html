@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="theme-color" content="#f5f5f5">
+
+      <title>Covid 19 India</title>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+      <meta name="theme-color" content="#eeeeee">
+      <meta name="description" content="A website to track and visualize covid19 cases in India"/>
+      <link rel="icon" sizes="192x192" href="favicon.png">
+      
+
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!-- Google font-->
+
+
+      <!--SLick-->
+      
+      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+
+      <!--Animate css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+      <link rel="stylesheet" href="css/mainstyle.css">
+
+
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    
+    </head>
+
+    <body>
+      <div class="loader">
+        <div class="spinnera">
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper grey lighten-4">
+        <a href="#!" class="brand-logo black-text center" style="font-size: x-large;">Covid19 India</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="black-text" href="#overalldata2">Overall Data</a></li>
+          <li><a class="black-text" href="#statedata2">State Data</a></li>
+          <li><a class="black-text" href="#newsdata2">News Feed</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+      <div class="container">
+        <div class="maincase" id="maincase">
+          <div class="row">
+            <div class="col s6 m6 l3 x3">
+              <div class="card yellow lighten-4">
+                <div class="card-content">
+                <span class="card-title orange-text" style="font-size: large;">Total</span>
+                
+                <span class="orange-text" id="totalmain"> 
+                  
+                </span>
+              </div>
+              </div>
+            </div>
+            <div class="col s6 m6 l3 x3">
+              <div class="card grey lighten-4">
+                <div class="card-content">
+                <span class="card-title" style="font-size: large;">Active</span>
+                
+                <span class="" id="activemain"> </span>
+              </div>
+              </div>
+            </div>
+            <div class="col s6 m6 l3 x3">
+              <div class="card red lighten-4">
+                <div class="card-content">
+                <span class="card-title red-text" style="font-size: large;">Deaths</span>
+                
+                <span class="red-text" id="deathsmain"> </span>
+              </div>
+              </div>
+            </div>
+            <div class="col s6 m6 l3 x3">
+              <div class="card green lighten-4">
+                <div class="card-content">
+                <span class="card-title green-text" id="overalldata2" style="font-size: large;">Recoveries</span>
+                
+                <span class="green-text" id="recoveriesmain"> </span>
+              </div>
+              </div>
+            </div>
+            
+
+        </div>
+
+      </div>
+
+      <!--Overall-->
+
+      <div class="overall" >
+        <div class="row">
+          <div class="col  s12 m12 l6 xl6">
+
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title"></span>
+                <p></p>
+            <canvas id='overalldata' style="margin: 1%" height="250"></canvas>
+           
+           
+            </div>
+            </div>
+          
+
+          </div>
+          <div class="col  s12 m12 l6 xl6">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title"></span>
+                
+            <canvas id='newcasesdata' style="margin: 1%" height="250"></canvas>
+           
+           
+            </div>
+            </div>
+           
+            
+          </div>
+          <div class="col  s12 m12 l6 xl6">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title"></span>
+                <p></p>
+            <canvas id='newdeathsdata' style="margin: 1%" height="250"></canvas>
+           
+           
+            </div>
+            </div>
+           
+            
+          </div>
+          <div class="col  s12 m12 l6 xl6">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title"></span>
+                <p></p>
+            <canvas id='totalcasesdata' style="margin: 1%" height="250"></canvas>
+           
+           
+            </div>
+            </div>
+           
+            
+          </div>
+          <div class="col  s12 m12 l6 x6">
+            <div class="card" id="statedata2">
+              <div class="card-content">
+                <span class="card-title"></span>
+                <p></p>
+            <canvas id='totaldeathsdata' style="margin: 1%" height="300"></canvas>
+           
+           
+            </div>
+            </div>
+           
+            
+          </div>
+          <div class="col  s12 m12 l6 xl6">
+            <div class="card" >
+              <div class="card-content">
+                <span class="card-title"></span>
+                <p></p>
+            <canvas id='toptendata' style="margin: 1%" height="300"></canvas>
+           
+           
+            </div>
+            </div>
+           
+            
+          </div>
+
+        </div>
+
+      </div>
+      
+      <!--STATE DATA-->
+      
+      <div class="statedata blue lighten-4" >
+        <center><h5 class="blue-text text-darken-4">State Data</h5></center>
+        <div class="container" style="margin-top: 2%;margin-bottom: 2%;">
+        <nav style="border-radius: 10px;">
+          <div class="nav-wrapper blue lighten-5" style="border-radius: 10px;">
+           
+              <div class="input-field">
+                <input id="searchstates" type="search" autocomplete="off" placeholder="Search states..." style="border-radius: 10px;">
+                <label class="label-icon" for="search"><i class="material-icons blue-text">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            
+          </div>
+        </nav>
+      </div>
+          <div class="row" id="statedata">
+
+
+
+          </div>
+      </div>
+
+
+
+      <!--State data end-->
+
+      <!-- NEWS START-->
+      <div class="partnews yellow lighten-4" id="newsdata2">
+      
+        <center><h5 class="deep-orange-text">News Feed</h5></center>
+      
+      <div class="newscontent" id="newscontent" style="text-align: center;margin-right: 2%;">
+          <div class="slider" id="sliderr">
+           
+          
+          </div>
+      </div>
+    </div>
+    <!-- NEWS END-->
+</div>
+
+<footer class="page-footer grey lighten-4" style="margin-top: 2%">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l6 xl6">
+        <h5 class="black-text">About</h5>
+        <p class="grey-text">The data is available only for research and academic purposes.</p>
+      </div>
+      <div class="col s12 m12 l6 xl6">
+        <h5 class="black-text">Credits</h5>
+        <ul>
+          <li><a class="grey-text " target="_blank" href="https://materializecss.com/">Materialize CSS</a></li>
+          <li><a class="grey-text " target="_blank" href="https://daneden.github.io/animate.css/">Animate css</a></li>
+          <li><a class="grey-text " target="_blank" href="https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_India">Wikipedia</a></li>
+          <li><a class="grey-text " target="_blank" href="https://www.indiatoday.in/coronavirus-covid-19-outbreak">India Today</a></li>
+          <li><a class="grey-text" target="_blank" href="https://kenwheeler.github.io/slick/">Slick Carousel</a></li>
+          <li><a class="grey-text " target="_blank" href="https://www.chartjs.org/">Chart JS</a></li>
+
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+
+
+    </div>
+  </div>
+</footer>
+
+<script src="js/covdata.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script src="js/carouselloader.js"></script>
+
+ 
+
+
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+  </html>
